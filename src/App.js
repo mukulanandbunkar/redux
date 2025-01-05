@@ -6,7 +6,7 @@ import GrandParent from './component/GrandParent';
 const src = {
    type : 'folder',
     component : {
-      isAdmin: ['mukul', 'vedash']
+      isAdmin: ['mukul', 'vedash'],
       type: 'folder',
       GrandParent : {
         GrandParentsx: {
