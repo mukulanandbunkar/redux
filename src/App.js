@@ -1,23 +1,57 @@
-import logo from './logo.svg';
+
 import './App.css';
+import GrandParent from './component/GrandParent';
+['type', 'isAdmin']
+
+const src = {
+   type : 'folder',
+    component : {
+      isAdmin: ['mukul', 'vedash']
+      type: 'folder',
+      GrandParent : {
+        GrandParentsx: {
+          type: 'file'
+        },
+      GrandParentCss  :{
+
+      }
+      }
+    }
+}
+
+const file = {
+  name: 'src',
+  type: 'folder',
+  children: [{
+    name: 'component',
+    type: 'folder',
+    children: [{
+      name:'Granparent.tsx',
+      type: 'file'
+    }, {
+      name: 'Grandparent.css',
+      type: 'file'
+    }]
+  }]
+}
+
+// folder ---> 
+
+
+const FolderStructure =  ({file}) => {
+  return file.children.map((ele) => {
+    if(type === 'folder') {
+      return <FolderStructure file={ele} />
+    } else {
+      return <div>{ele.name}</div>
+    }
+  })
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <FolderStructure file = {file}/>
     </div>
   );
 }
